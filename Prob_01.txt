@@ -1,0 +1,42 @@
+Algorithme DistinctElements
+
+Type
+  Tarray = array[1..100] of Integer;
+
+Var
+  set1, set2: Tarray;
+  i, j, x, y, s: Integer;
+
+Begin
+  
+  writeln('Entrer la taille du premier set: ');
+  readln(x);
+ 
+  writeln('Entrer la taille du deuxieme set: ');
+  readln(y);
+  
+  i=0; 
+  for i from 0 to x-1 do
+    writeln('Entrer les composants du premier set: ');
+    readln(c1);
+    set1[i]=c1;
+  end; 
+  
+  j=0;
+  for j from 0 to y-1 do
+    writeln('Entrer les composants du deuxieme set: ');
+    readln(c2);
+    set2[j]=c2;
+  end; 
+
+  s=0;
+  for i from 0 to x-1 do
+   for j from 0 to y-1 do
+     if(set1[i] <> set2[j])
+       s=s+set[i,j]
+   end;
+  end;
+
+  writeln('La somme des elements distinct: ',s); 
+
+end;

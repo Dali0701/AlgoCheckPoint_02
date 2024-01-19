@@ -1,0 +1,44 @@
+algorithm DotProductProcedure(v1, v2, ps)
+    ps := 0
+    for i from 1 to length(v1) do
+        ps := ps + v1[i] * v2[i]
+    end for
+end algorithm
+
+algorithm CheckOrthogonalityProcedure(n, vectors)
+    for pair from 1 to n do
+        v1 := vectors[pair * 2 - 1]
+        v2 := vectors[pair * 2]
+        dot_product(v1, v2, ps)
+
+        if ps = 0 then
+            output "Vectors ", v1, " and ", v2, " are orthogonal."
+        else
+            output "Vectors ", v1, " and ", v2, " are not orthogonal."
+        end if
+    end for
+end algorithm
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function DotProductFunction(v1, v2): real
+    ps := 0
+    for i from 1 to length(v1) do
+        ps := ps + v1[i] * v2[i]
+    end for
+    return ps
+end function
+
+algorithm CheckOrthogonalityFunction(n, vectors)
+    for pair from 1 to n do
+        v1 := vectors[pair * 2 - 1]
+        v2 := vectors[pair * 2]
+        ps := DotProductFunction(v1, v2)
+
+        if ps = 0 then
+            output "Vectors ", v1, " and ", v2, " are orthogonal."
+        else
+            output "Vectors ", v1, " and ", v2, " are not orthogonal."
+        end if
+    end for
+end algorithm
